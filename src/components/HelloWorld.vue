@@ -1,17 +1,8 @@
 <template>
   <div>
-    <div>
-      <!-- <h1>{{ msg }}</h1> -->
-      <h1>Случайный выбор публикаций</h1>
-    </div>
-    <div>
-      <input placeholder="введите хэштег" v-model="tag" />
-    </div>
-    <div>
-      <button type="button" v-on:click.prevent="selectRandomPost" v-if="!image">Выбрать публикацию</button>
+    <v-text-field color="success" loading hint="введите хэштег" persistent-hint v-model="tag"></v-text-field>
 
-      <button type="button" v-on:click.prevent="resetForm" v-if="!!image">Начать заново</button>
-    </div>
+    <v-btn type="button" v-on:click.prevent="selectRandomPost" v-if="!image">Выбрать публикацию</v-btn>
 
     <div v-if="!!image && !!tag">
       <a v-bind:href="detailsUrl">
@@ -20,7 +11,7 @@
       <!-- <p v-text="userName"></p> -->
     </div>
 
-    <pre>{{tag}}</pre>
+    <v-btn type="button" v-on:click.prevent="resetForm" v-if="!!image">Начать заново</v-btn>
   </div>
 </template>
 
@@ -46,13 +37,12 @@ export default {
   },
   methods: {
     resetForm() {
-      if(this.tag){
+      if (this.tag) {
         this.selectRandomPost();
-      }else{
+      } else {
         this.$set(this, "image", null);
         this.$set(this, "tag", null);
       }
-
     },
     selectRandomPost() {
       // alert(this.tag);
@@ -64,9 +54,9 @@ export default {
       }
 
       ig.scrapeTag(this.tag).then(posts => {
-        var reduced = posts.medias.filter(p=> p.owner_id != "4365503338");
+        var reduced = posts.medias.filter(p => p.owner_id != "4365503338");
         posts = {
-          total:reduced.length,
+          total: reduced.length,
           medias: reduced
         };
         storage[this.tag] = posts;
