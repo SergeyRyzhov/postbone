@@ -43,6 +43,7 @@
         </v-row>
       </v-container>
     </v-content>
+    <canvas id="canvas" ref="canvas"></canvas>
   </v-app>
 </template>
 
