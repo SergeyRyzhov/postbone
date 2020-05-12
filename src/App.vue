@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <!-- <v-img
           alt="Vuetify Logo"
@@ -22,7 +18,7 @@
           min-width="100"
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
-        /> -->
+        />-->
         <h1>Случайных постов выбор</h1>
       </div>
 
@@ -35,27 +31,33 @@
       >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
-      </v-btn> -->
+      </v-btn>-->
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="10" md="8">
+            <HelloWorld />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from "./components/HelloWorld";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    HelloWorld,
+    HelloWorld
   },
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>

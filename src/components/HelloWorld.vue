@@ -1,18 +1,26 @@
 <template>
-  <div>
-    <v-text-field color="success" loading hint="введите хэштег" persistent-hint v-model="tag"></v-text-field>
+  <v-container class="fill-height" fluid>
+    <v-row align="center" justify="center">
+      <v-col cols="12" >
+        <v-text-field color="success" :loading="!tag" hint="введите хэштег" persistent-hint v-model="tag"></v-text-field>
+        <v-btn type="button" v-on:click.prevent="selectRandomPost" v-if="!image">Выбрать публикацию</v-btn>
+      </v-col>
+    </v-row>
+    <v-row align="center" justify="center" v-if="!!image && !!tag">
+      <v-col cols="12"  sm="10" md="8">
+          <a v-bind:href="detailsUrl">
+            <img v-bind:src="image" height="100%" width="100%" />
+          </a>
+          <!-- <p v-text="userName"></p> -->
+      </v-col>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-col cols="12" >
 
-    <v-btn type="button" v-on:click.prevent="selectRandomPost" v-if="!image">Выбрать публикацию</v-btn>
-
-    <div v-if="!!image && !!tag">
-      <a v-bind:href="detailsUrl">
-        <img v-bind:src="image" height="256px" width="256px" />
-      </a>
-      <!-- <p v-text="userName"></p> -->
-    </div>
-
-    <v-btn type="button" v-on:click.prevent="resetForm" v-if="!!image">Начать заново</v-btn>
-  </div>
+        <v-btn type="button" v-on:click.prevent="resetForm" v-if="!!image">Начать заново</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
