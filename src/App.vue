@@ -19,7 +19,7 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
         />-->
-        <h1>Случайных постов выбор</h1>
+        <h1>Выбор публикации</h1>
       </div>
 
       <v-spacer></v-spacer>
