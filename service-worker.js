@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a955138fd88eb8fc75a52f8f83f00a41.js"
+  "/postbone/precache-manifest.d013789ce7d755ed098633736df0330e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "postbone-js"});
