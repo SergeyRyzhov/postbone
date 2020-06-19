@@ -1,0 +1,4 @@
+[submodule "GitHub pages"]
+	path = dist
+	url = https://github.com/SergeyRyzhov/postbone.git
+	branch = gh-pages
